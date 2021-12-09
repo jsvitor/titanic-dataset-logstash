@@ -1,0 +1,2 @@
+- pipeline.id: my-pipeline_titanic
+  path.config: "/etc/path/to/titanic-pipeline.config"
