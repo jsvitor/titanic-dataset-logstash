@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
 
 services:
    logstash:
@@ -15,19 +15,10 @@ services:
       #   XPACK.MONITORING.ELASTICSEARCH.HOSTS: http://elastic:9200
       restart: on-failure
       volumes:
-         - ./lib:/mnt
-         - ./titanic-dataset:/usr/share/logstash/titanic-dataset
-         - ./config/logstash.yml:/usr/share/logstash/config/logstash.yml
-         - ./config/pipeline.yml:/usr/share/logstash/config/pipeline.yml
+      #   - ./lib:/mnt
+         - .:/usr/share/logstash/titanic-dataset
+         - ./logstash.yml:/usr/share/logstash/config/logstash.yml
+         - ./pipelines.yml:/usr/share/logstash/config/pipelines.yml
          #- ./config/sql_last_value:/usr/share/logstash/config/sql_last_value:rw
       ports:
          - 5044:5044
-      networks: 
-         - elastic
-
-#volumes: 
-   #logstash:
-
-networks: 
-   elastic:
-      name: elastic
