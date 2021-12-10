@@ -1,2 +1,2 @@
 - pipeline.id: my-pipeline_titanic
-  path.config: "/etc/path/to/titanic-pipeline.config"
+  path.config: "/usr/share/logstash/titanic-dataset/titanic-pipeline.conf"
